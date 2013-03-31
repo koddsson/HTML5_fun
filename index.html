@@ -1,1 +1,38 @@
-my GitHub Page
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css" />
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+  </head>
+  <body>
+    <div id="masterContainer">
+      <div class="container"><h1>Click me!</h1></div>
+      <div class="container">2</div>
+      <div class="container">3</div>
+      <div class="container">4</div>
+      <div class="container">5</div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+    <script type="text/javascript">
+      var elementIndex = 0;
+      $(document).ready(function() {
+          $(".container").click(function() { 
+            $(this).hide();
+            elementIndex += 1;
+            if(elementIndex == $(".container").size()) {
+              elementIndex = 0;
+              $(".container").show();
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
