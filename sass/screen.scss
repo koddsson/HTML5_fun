@@ -16,6 +16,24 @@ html, body {
   overflow: hidden;
   @include user-select("none");
 }
+
+div#listWithBracket {
+  overflow: hidden;
+  @include display-box;
+
+  ul#frameworkList {
+    list-style: none;
+    margin: 0 0 0 5px;
+  }
+
+  span.bracket {
+    @include display-box;
+    @include box-pack("center");
+    @include box-align("center");
+    @include box-sizing("border-box");
+  }
+}
+
 div#masterContainer {
   height: 100%;
   width: 100%;

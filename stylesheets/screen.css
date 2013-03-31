@@ -12,12 +12,44 @@ html, body {
   user-select: none;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
+div#listWithBracket {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+}
+/* line 24, ../sass/screen.scss */
+div#listWithBracket ul#frameworkList {
+  list-style: none;
+  margin: 0 0 0 5px;
+}
+/* line 29, ../sass/screen.scss */
+div#listWithBracket span.bracket {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
+  box-pack: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 37, ../sass/screen.scss */
 div#masterContainer {
   height: 100%;
   width: 100%;
 }
-/* line 22, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 div#masterContainer div.container {
   background-color: #ff7302;
   display: -webkit-box;

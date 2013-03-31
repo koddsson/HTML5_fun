@@ -20,24 +20,59 @@
       <div class="container">
         <h1>Kewl?</h1>
       </div>
-      <div class="container">Well I tought so ..</div>
-      <div class="container">This whole page slideshow thing is made using only HTML5/CSS</div>
-      <div class="container">With a little help from my friends <a target="_blank" href="http://sass-lang.com/">SASS</a> and <a target="_blank" href="http://compass-style.org/">Compass</a></div>
+      <div class="container">Well I tought so .. 
+        <h5>You can also use the right/left arrow keys as well as j/k</h5>
+      </div>
+      <div class="container">This whole page slideshow thing is made using only HTML5/CSS3/JavaScript</div>
+      <div class="container">
+        With a little help from my these guys 
+        <div id="listWithBracket">
+          <span class="bracket">{</span>
+          <ul id="frameworkList">
+            <li><a target="_blank" href="http://sass-lang.com/">SASS</a></li>
+            <li><a target="_blank" href="http://compass-style.org/">Compass</a></li>
+            <li><a target="_blank" href="http://jquery.com/">jQuery</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
     <script type="text/javascript">
       var elementIndex = 0;
+      var Direction = { Right: 0, Left: 1 };
+      var slide = function(direction) { 
+        if(direction == Direction.Right) {
+          $($(".container")[elementIndex]).hide();
+          elementIndex += 1;
+          if(elementIndex == $(".container").size()) {
+            elementIndex = 0;
+            $(".container").show();
+          }
+        } else if (direction == Direction.Left) {
+          elementIndex -= 1;
+          if(elementIndex < 0) {
+            elementIndex = $(".container").size() - 1;
+            $(".container").hide();
+          }
+          $($(".container")[elementIndex]).show();
+        }
+      };
       $(document).ready(function() {
           $(".container").click(function(e) { 
             if($(e.target).is("a")) return;
-            $(this).hide();
-            elementIndex += 1;
-            if(elementIndex == $(".container").size()) {
-              elementIndex = 0;
-              $(".container").show();
-            }
+            slide(Direction.Right);
           });
+          // Apperantly the font-stretch property is not supported by any browser :(
+          // http://www.w3schools.com/cssref/css3_pr_font-stretch.asp
+          // So we gots to make some javascript hack to make sure that the bracket 
+          // element font gets as large as the ul element accompanying it.
+          $(".bracket").css("font-size", $("#frameworkList").height());
+      });
+      $(document).keydown(function(e) {
+        console.log(e.keyCode);
+        if(e.keyCode == 37 || e.keyCode == 75) { slide(Direction.Left); }
+        else if(e.keyCode == 39 || e.keyCode == 74) { slide(Direction.Right); }
       });
     </script>
   </body>
