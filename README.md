@@ -13,5 +13,6 @@ You can view the results at [this pages github page](http://koddsson.github.com/
 
 Todo list
 ---------
-* Add keyboard bindings (also vim bindings ;)
+* ~~Add keyboard bindings (also vim bindings ;)~~
 * Comment code and explain how all of this adds up for the newbies
+* Explain why this is so cool
