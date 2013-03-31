@@ -1,0 +1,30 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3/box";
+@import "compass/css3/box-sizing";
+
+$container-bg: #FF7302;
+$container-fg: #FFFFFF;
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+div#masterContainer {
+  height: 100%;
+  width: 100%;
+  div.container {
+    background-color: $container-bg;
+    @include display-box;
+    @include box-pack("center");
+    @include box-align("center");
+    @include box-sizing("border-box");
+    height: 100%;
+    width: 100%;
+    color: $container-fg;
+  }
+}
