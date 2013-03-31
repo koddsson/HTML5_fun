@@ -5,6 +5,7 @@
 
 @import "compass/css3/box";
 @import "compass/css3/box-sizing";
+@import "compass/css3/user-interface";
 
 $container-bg: #FF7302;
 $container-fg: #FFFFFF;
@@ -13,6 +14,7 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  @include user-select("none");
 }
 div#masterContainer {
   height: 100%;
