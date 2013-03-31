@@ -12,12 +12,24 @@ html, body {
   user-select: none;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
+span.bracket {
+  font-size: 3em;
+  vertical-align: middle;
+}
+
+/* line 25, ../sass/screen.scss */
+ul#frameworkList {
+  list-style: none;
+  margin: 0 0 0 5px;
+}
+
+/* line 29, ../sass/screen.scss */
 div#masterContainer {
   height: 100%;
   width: 100%;
 }
-/* line 22, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 div#masterContainer div.container {
   background-color: #ff7302;
   display: -webkit-box;
