@@ -9,71 +9,14 @@
     <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
     <!--[if IE]>
       <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
+      <![endif]-->
   </head>
   <body>
     <a href="https://github.com/koddsson/HTML5_fun"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
-    <div id="masterContainer">
-      <div class="container">
-        <h1>Click me!</h1>
-      </div>
-      <div class="container">
-        <h1>Kewl?</h1>
-      </div>
-      <div class="container">Well I tought so .. 
-        <h5>You can also use the right/left arrow keys as well as j/k</h5>
-      </div>
-      <div class="container">This whole page slideshow thing is made using only HTML5/CSS3/JavaScript</div>
-      <div class="container">
-        With a little help from my these guys 
-        <div id="listWithBracket">
-          <span class="bracket">{</span>
-          <ul id="frameworkList">
-            <li><a target="_blank" href="http://sass-lang.com/">SASS</a></li>
-            <li><a target="_blank" href="http://compass-style.org/">Compass</a></li>
-            <li><a target="_blank" href="http://jquery.com/">jQuery</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
-    <script type="text/javascript">
-      var elementIndex = 0;
-      var Direction = { Right: 0, Left: 1 };
-      var slide = function(direction) { 
-        if(direction == Direction.Right) {
-          $($(".container")[elementIndex]).hide();
-          elementIndex += 1;
-          if(elementIndex == $(".container").size()) {
-            elementIndex = 0;
-            $(".container").show();
-          }
-        } else if (direction == Direction.Left) {
-          elementIndex -= 1;
-          if(elementIndex < 0) {
-            elementIndex = $(".container").size() - 1;
-            $(".container").hide();
-          }
-          $($(".container")[elementIndex]).show();
-        }
-      };
-      $(document).ready(function() {
-          $(".container").click(function(e) { 
-            if($(e.target).is("a")) return;
-            slide(Direction.Right);
-          });
-          // Apperantly the font-stretch property is not supported by any browser :(
-          // http://www.w3schools.com/cssref/css3_pr_font-stretch.asp
-          // So we gots to make some javascript hack to make sure that the bracket 
-          // element font gets as large as the ul element accompanying it.
-          $(".bracket").css("font-size", $("#frameworkList").height());
-      });
-      $(document).keydown(function(e) {
-        console.log(e.keyCode);
-        if(e.keyCode == 37 || e.keyCode == 75) { slide(Direction.Left); }
-        else if(e.keyCode == 39 || e.keyCode == 74) { slide(Direction.Right); }
-      });
-    </script>
+    Below is a list of things I've been messing with.
+    <ul>
+      <li><a href="slide_show.html">Slideshow thingy</a></li>
+      <li><a href="transformation.html">Rotation thing</a></li>
+    </ul>
   </body>
 </html>

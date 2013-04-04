@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css" />
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+      <![endif]-->
+  </head>
+  <body>
+    <div class="box">Hello World</div>
+    Rotate Y: <input type="checkbox" class="rotateY" />
+    Rotate X: <input type="checkbox" class="rotateX" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var time = 10;
+        var currentRotationY = 0;
+        var currentRotationX = 0;
+        var vendor_flags = ["-webkit-", "-moz-", "-ms-", "-o-", ""];    // I keep all the vendor prefixes so that I can iterate over them later
+        var rotate = function() { 
+          $(vendor_flags).each(function(idx, elem) {
+            // So that I don't need to set the CSS property for each vendor-prefix
+            $("div.box").css(elem + "transform", ("rotateY(" + currentRotationY + "deg)" + "rotateX(" + currentRotationX + "deg)"));
+          });
+          // Only iterate over the axis there the corresponding checkbox has been checked.
+          if($("input.rotateY")[0].checked) {
+            currentRotationY = (currentRotationY >= 360) ? 0 : currentRotationY + 1;
+          } if($("input.rotateX")[0].checked) {
+            currentRotationX = (currentRotationX >= 360) ? 0 : currentRotationX + 1
+          }
+          // derp.
+          setTimeout(rotate, time);
+        };
+        // Initial call to the function.
+        rotate();
+      });
+    </script>
+  </body>
+</html>
